@@ -32,7 +32,7 @@ def main():
     moveMade = False
     loadImages() #Uma única vez
     running = True
-    sqSelected = () #manter o histórico de clicks, inicial nenhum elemento no tuple (row, col)
+    sqSelected = () #manter o histórico de clicks, inicialmente nenhum elemento no tuple (row, col)
     playerClicks = [] #manter o histórico de clicks duplo tuple [(6, 4), (4,4)]
     while running:
         for e in p.event.get():
@@ -51,12 +51,13 @@ def main():
 
                 if len(playerClicks) == 2:
                     move = ChessEngine.Move(playerClicks[0], playerClicks[1], gs.board)
-                    if move in validMoves:
-                        gs.makeMove(move)
-                        moveMade = True
-                        sqSelected = ()
-                        playerClicks = []
-                    else:
+                    for i in range(len(validMoves)):
+                        if move == validMoves[i]:
+                            gs.makeMove(validMoves[i])
+                            moveMade = True
+                            sqSelected = ()
+                            playerClicks = []
+                    if not moveMade:
                         playerClicks = [sqSelected]
 
             elif e.type == p.KEYDOWN:

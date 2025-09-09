@@ -27,6 +27,7 @@ class GameState():
         self.checkMate = False
         self.staleMate = False
 
+
 #Pega um movimento como parametro e executa. (Não funcional para roque, promoção de peão e en passant)
     def makeMove(self, move):
         self.board[move.startRow][move.startCol] = '--'
@@ -38,6 +39,9 @@ class GameState():
         elif move.pieceMoved == "bK":
             self.blackKingLocation = (move.endRow, move.endCol)
 
+
+        if move.isPawnPromotion:
+            self.board[move.endRow][move.endCol] = move.pieceMoved[0] + 'Q'
         '''
         Desfazer o ultimo lance
         '''
@@ -89,7 +93,7 @@ class GameState():
         for move in oppMoves:
             if move.endRow == r and move.endCol == c:
                 return True
-        False
+        return False
     '''
     Todos os lances fora de uma posição de check
     '''
@@ -217,14 +221,18 @@ class Move():
     rowsToRanks = {v: k for k, v in ranksToRows.items()}
     filesToCols = {"a": 0, "b": 1, "c": 2, "d": 3, "e": 4, "f": 5, "g": 6, "h": 7}
     colsToFiles = {v: k for k, v in filesToCols.items()}
-    def __init__(self, startSq, endSq, board):
+    def __init__(self, startSq, endSq, board, enpassantPossible = ()):
         self.startRow = startSq[0]
         self.startCol = startSq[1]
         self.endRow = endSq[0]
         self.endCol = endSq[1]
         self.pieceMoved = board[self.startRow][self.startCol]
         self.pieceCaptured = board[self.endRow][self.endCol]
+        self.isPawnPromotion = False
+        if (self.pieceMoved == 'wp' and self.endRow == 0) or (self.pieceMoved == 'bp' and self.endRow == 7):
+            self.isPawnPromotion = True
         self.moveID = self.startRow * 1000 + self.startCol * 100 + self.endRow * 10 + self.endCol
+        self.isEnpassantMove = (self.pieceMoved[1] == 'p' and (self.endRow, self.endCol) == enpassantPossible)
 
     '''
     Override o metodo igual
