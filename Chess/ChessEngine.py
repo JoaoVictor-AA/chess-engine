@@ -26,28 +26,36 @@ class GameState():
         self.blackKingLocation = (0, 4)
         self.checkMate = False
         self.staleMate = False
-
+        self.enpassantPossible = ()
 
 #Pega um movimento como parametro e executa. (Não funcional para roque, promoção de peão e en passant)
     def makeMove(self, move):
         self.board[move.startRow][move.startCol] = '--'
         self.board[move.endRow][move.endCol] = move.pieceMoved
-        self.moveLog.append(move)
+        self.moveLog.append((move, self.enpassantPossible))
         self.whiteToMove = not self.whiteToMove
         if move.pieceMoved == "wK":
             self.whiteKingLocation = (move.endRow, move.endCol)
         elif move.pieceMoved == "bK":
             self.blackKingLocation = (move.endRow, move.endCol)
 
-
         if move.isPawnPromotion:
             self.board[move.endRow][move.endCol] = move.pieceMoved[0] + 'Q'
-        '''
-        Desfazer o ultimo lance
-        '''
+
+        if move.isEnpassantMove:
+            self.board[move.startRow][move.endCol] = "--"
+
+        if move.pieceMoved[1] == "p" and abs(move.startRow - move.endRow) == 2:
+            self.enpassantPossible = ((move.startRow + move.endRow)//2, move.startCol)
+        else:
+            self.enpassantPossible = ()
+
+    '''
+    Desfazer o ultimo lance
+    '''
     def undoMove(self):
         if len(self.moveLog) != 0:
-            move = self.moveLog.pop()
+            move, self.enpassantPossible = self.moveLog.pop()
             self.board[move.startRow][move.startCol] = move.pieceMoved
             self.board[move.endRow][move.endCol] = move.pieceCaptured
             self.whiteToMove = not self.whiteToMove
@@ -55,6 +63,8 @@ class GameState():
                 self.whiteKingLocation = (move.startRow, move.startCol)
             elif move.pieceMoved == "bK":
                 self.blackKingLocation = (move.startRow, move.startCol)
+            if move.isEnpassantMove:
+                self.board[move.startRow][move.endCol] = 'bp' if move.pieceMoved[0]=='w' else 'wp'
 
     '''
     Todos os lances durante um check
@@ -119,9 +129,13 @@ class GameState():
             if c-1 >=0: #capturas à esquerda
                 if self.board[r-1][c-1][0] == "b" :
                     moves.append(Move((r,c), (r-1, c-1), self.board))
+                elif (r-1, c-1) == self.enpassantPossible:
+                    moves.append(Move((r, c), (r-1, c-1), self.board, enpassantPossible=self.enpassantPossible))
             if c+1 <= 7: #capturas à direita
                 if self.board[r-1][c+1][0] == "b" :
                     moves.append(Move((r,c), (r-1, c+1), self.board))
+                elif (r-1, c+1) == self.enpassantPossible:
+                    moves.append(Move((r, c), (r-1, c+1), self.board, enpassantPossible=self.enpassantPossible))
         else:
             if self.board[r+1][c] == "--":
                 moves.append(Move((r,c), (r+1, c), self.board))
@@ -130,10 +144,13 @@ class GameState():
             if c-1 >=0:
                 if self.board[r+1][c-1][0] == 'w':
                     moves.append(Move((r, c), (r + 1, c-1), self.board))
+                elif (r+1, c-1) == self.enpassantPossible:
+                    moves.append(Move((r, c), (r + 1, c-1), self.board, enpassantPossible=self.enpassantPossible))
             if c+1 <= 7:
                 if self.board[r+1][c+1][0] == 'w':
                     moves.append(Move((r, c), (r + 1, c + 1), self.board))
-
+                elif (r+1, c+1) == self.enpassantPossible:
+                    moves.append(Move((r, c), (r + 1, c + 1), self.board, enpassantPossible=self.enpassantPossible))
 
     '''
     Pega todos os lances para a torre localizada na localização dada (r,c) e adiciona na lista de moves
@@ -245,4 +262,3 @@ class Move():
         return self.getRankFile(self.startRow, self.startCol) + self.getRankFile(self.endRow, self.endCol)
     def getRankFile(self,r, c):
         return self.colsToFiles[c] + self.rowsToRanks[r]
-
