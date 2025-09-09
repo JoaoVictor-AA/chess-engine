@@ -4,7 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="22993559-6001-472e-b800-8ccf889be37d" name="Changes" comment="Fixed Chess Game/ Directory Error" />
+    <list default="true" id="22993559-6001-472e-b800-8ccf889be37d" name="Changes" comment="Fixed Chess Game/ Directory Error">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/ChessEngine.py" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/ChessEngine.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/bB.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/bB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/bK.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/bK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/bN.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/bN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/bQ.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/bQ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/bR.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/bR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/bp.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/bp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/wB.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/wB.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/wK.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/wK.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/wN.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/wN.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/wQ.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/wQ.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/wR.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/wR.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/Chess/images/wp.png" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/images/wp.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ENGINEDEXADREZ/ChessMain.py" beforeDir="false" afterPath="$PROJECT_DIR$/ENGINEDEXADREZ/ChessMain.py" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -21,7 +37,7 @@
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
         <entry key="$PROJECT_DIR$" value="master" />
-        <entry key="$PROJECT_DIR$/ENGINEDEXADREZ" value="atualizacao" />
+        <entry key="$PROJECT_DIR$/ENGINEDEXADREZ" value="filerevision" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/ENGINEDEXADREZ" />
@@ -35,7 +51,7 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/JoaoVictor-AA/ENGINEDEXADREZ&quot;,
+    &quot;url&quot;: &quot;https://github.com/JoaoVictor-AA/ENGINEDEXADREZ.git&quot;,
     &quot;accountId&quot;: &quot;989c93ef-d4c7-4253-8553-9efd1ed5f72d&quot;
   }
 }</component>
@@ -48,21 +64,21 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.1password2john.executor": "Run",
-    "Python.ChessMain (1).executor": "Run",
-    "Python.ChessMain.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "atualizacao",
-    "last_opened_file_path": "C:/Users/joaov/xadrez/EngineXadrez"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.1password2john.executor&quot;: &quot;Run&quot;,
+    &quot;Python.ChessMain (1).executor&quot;: &quot;Run&quot;,
+    &quot;Python.ChessMain.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/joaov/OneDrive/Desktop/Python_DSA&quot;
   },
-  "keyToStringList": {
-    "ChangesTree.GroupingKeys": [
-      "directory"
+  &quot;keyToStringList&quot;: {
+    &quot;ChangesTree.GroupingKeys&quot;: [
+      &quot;directory&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\joaov\xadrez\EngineXadrez\Chess" />
@@ -71,7 +87,29 @@
       <recent name="C:\Users\joaov\xadrez\EngineXadrez\ENGINEDEXADREZ" />
     </key>
   </component>
-  <component name="RunManager" selected="Python.ChessMain (1)">
+  <component name="RunManager">
+    <configuration name="ChessMain (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="EngineXadrez" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/ENGINEDEXADREZ" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/ENGINEDEXADREZ/ChessMain.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="ChessMain" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="EngineXadrez" />
       <option name="ENV_FILES" value="" />
@@ -119,6 +157,9 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python.ChessMain (1)" />
+        <item itemvalue="Python.ChessMain" />
+        <item itemvalue="Python.ChessMain" />
+        <item itemvalue="Python.ChessMain" />
         <item itemvalue="Python.ChessMain" />
       </list>
     </recent_temporary>
@@ -171,8 +212,27 @@
       <option name="project" value="LOCAL" />
       <updated>1757247428960</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="Fixed Chess Game/ Directory Error">
+      <option name="closed" value="true" />
+      <created>1757247590703</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1757247590704</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Chess Project for learning python." />
